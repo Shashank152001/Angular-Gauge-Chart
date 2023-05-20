@@ -1,0 +1,21 @@
+.main-header{
+    /* position: fixed; */
+    height: 100%;
+}
+.header-heading{
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+    /* height:100%; */
+    /* position: fixed; */
+}
+.header-heading-left{
+   
+}
+.header-heading-right{
+    display: flex;
+}
+/* .header-profile-image{
+    display: flex;
+    justify-content: end;
+} */

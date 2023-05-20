@@ -1,0 +1,15 @@
+.main-subheader{
+    width: 96%;
+    margin: 1rem auto;
+}
+.subheader-heading{
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+}
+.subheader-heading-left{
+   
+}
+.subheader-heading-right{
+    display: flex;
+}

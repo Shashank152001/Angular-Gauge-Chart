@@ -1,0 +1,79 @@
+{
+    "data":[
+        {
+            "title":"preHeaterOutlet",
+            "value":55
+        },
+        {
+            "title":"driveCurrent",
+            "value":60
+        },
+        {
+            "title":"zoneTemp",
+            "value":80
+        },
+        {
+            "title":"Intel Temp",
+            "value":90
+        },
+        {
+            "title":"Intel Draft",
+            "value":23
+        },
+        {
+            "title":"Intel Nox",
+            "value":57
+        }
+    ],
+
+    "datas":[
+        {
+            "title":"Klin Speed",
+            "value":47
+        },
+        {
+            "title":"Klin Coal",
+            "value":60
+        },
+        {
+            "title":"Klin Feed",
+            "value":80
+        },
+        {
+            "title":"PC Temp",
+            "value":90
+        },
+        {
+            "title":"PH fan speed SP",
+            "value":23
+        },
+        {
+            "title":"Greate 1 Speed SP",
+            "value":57
+        },
+        {
+            "title":"Cooler Fan 2 SP",
+            "value":76
+        },
+        {
+            "title":"Cooler Fan 3 SP",
+            "value":45
+        },
+        {
+            "title":"Cooler Fan 3 SP",
+            "value":45
+        },
+        {
+            "title":"Cooler Fan 3 SP",
+            "value":45
+        },
+        {
+            "title":"Cooler Fan 3 SP",
+            "value":45
+        },
+        {
+            "title":"Cooler Fan 3 SP",
+            "value":45
+        }
+    ]
+}

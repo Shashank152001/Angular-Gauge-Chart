@@ -1,0 +1,40 @@
+<div class="main-dashboard">
+    <div class="dashboard-left">
+        <div class="dashboard-left-heading">
+            <h4 class="text-warning">RESULTANT PARAMETER</h4>
+        </div>
+        
+        <div class="dashboard-col">
+            <div *ngFor="let data of gaugeValue" class="dashboard-card">
+                <h5 class="text-light">{{data.title}}</h5>
+                <ngx-gauge [type]="gaugeType" 
+                [value]=data.value
+                [size]="100"
+                [foregroundColor]="foregroundColor"
+                [backgroundColor]="backgroundColor"
+                [label]="gaugeLabel"  
+                [append]="gaugeAppendText">
+              </ngx-gauge>
+            </div>
+        </div>
+        
+    </div>
+    <div class="dashboard-right">
+        <div class="dashboard-right-heading">
+            <h4 class="text-warning">CONTROL PARAMETERS</h4>
+        </div>
+        <div class="dashboard-col">
+            <div *ngFor="let data of gaugeValues" class="dashboard-card">
+                <h5 class="text-light">{{data.title}}</h5>
+                <ngx-gauge [type]="gaugeType" 
+                [value]=data.value
+                [size]="90"
+                [foregroundColor]="foregroundColor"
+                [backgroundColor]="backgroundColor"
+                [label]="gaugeLabel"  
+                [append]="gaugeAppendText">
+              </ngx-gauge>
+            </div>
+        </div>
+    </div>
+</div>

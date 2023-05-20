@@ -1,0 +1,46 @@
+.main-dashboard{
+    display: flex;
+    margin: 1rem auto;
+    width: 96%;
+    gap: 20px;
+}
+.dashboard-left, .dashboard-right{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: 50%;
+    
+}
+/* .dashboard-right{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: 50%;
+} */
+.dashboard-col{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: space-evenly;
+    /* border-top: 2px solid grey; */
+}
+.dashboard-card{
+    padding: 0.5rem;
+    margin: 1rem;
+    border: 2px solid grey;
+    color: white;
+}
+
+.dashboard-left-heading,.dashboard-right-heading{
+    display: flex;
+    padding: 1rem;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid grey;
+}
+
+.dashboard-right h5{
+    font-size: 0.8rem;
+}
