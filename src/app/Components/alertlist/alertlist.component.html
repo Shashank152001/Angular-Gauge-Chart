@@ -1,0 +1,84 @@
+<div class="alertlist">
+    <div class="alertlist-body">
+        <div class="alterlist-main">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h5 class="alertlist-heading">Alert List</h5>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field style="width: 100%; align-items: center; height: 73px; margin-right: 10px; color: #fff;">
+                        <mat-label style="color: #fff;">Parameter</mat-label>
+                        <mat-select [(ngModel)]="selectedValue" name="parameters">
+                          <mat-option *ngFor="let parameters of parameters" [value]="parameters.value">
+                            {{parameters.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <!-- <p class="select-class"> Selected food: {{selectedValue}} </p> -->
+                </div>
+                <div class="col-sm-4 p-0 pe-2">
+                    <div class="row">
+                        <div class="col-md-8 p-0 pe-2 ps-1">
+                            <input [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10"
+                                    [selectMode]="'range'" class="datebox">
+                            <owl-date-time #dt10></owl-date-time>
+                        </div>
+                        <div class="col-md-4 d-flex ps-1">
+                            <button class="btn btn-secondary reset">Reset</button>
+                            <div class="p-1">
+                                <!-- <i class="fa-solid fa-arrow-down text-light icon-download"></i> -->
+                                <!-- <i class="fas fa-download text-light icon-download"></i> -->
+                                <span class="material-icons icon-download text-light">file_download</span>
+                                <!-- <i class="fa-solid fa-down-to-line" style="color: #ffffff;"></i> -->
+                                <!-- <i class="fa-solid fa-down-to-line" style="color: #ffffff;"></i> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <mat-form-field>
+                <mat-label style="color: #fff;">Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" #input style="color: #fff;">
+                <span class='material-icons icon-search'>search</span>
+              </mat-form-field>
+            <div class="mat-elevation-z8" style="width:100%;height:45vh; overflow: auto;">
+                <table mat-table [dataSource]="dataSource" matSort>
+              
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Parameter Name </th>
+                    <td mat-cell *matCellDef="let element" class="content"> {{element.position}} </td>
+                  </ng-container>
+              
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Parameter Value </th>
+                    <td mat-cell *matCellDef="let element" class="content"> {{element.name}} </td>
+                  </ng-container>
+              
+                  <!-- Weight Column -->
+                  <ng-container matColumnDef="weight">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Deviation(%) </th>
+                    <td mat-cell *matCellDef="let element" class="content"> {{element.weight}} </td>
+                  </ng-container>
+              
+                  <!-- Symbol Column -->
+                  <ng-container matColumnDef="symbol">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+                    <td mat-cell *matCellDef="let element" class="content"> {{element.symbol}} </td>
+                  </ng-container>
+              
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell no-filter-data" colspan="4" style="color: #fff;">No data matching the filter "{{input.value}}"</td>
+                  </tr>
+                </table>            
+              </div>
+              <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                               showFirstLastButtons
+                               aria-label="Select page of periodic elements">
+              </mat-paginator>
+        </div>
+    </div>
+</div>

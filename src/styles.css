@@ -1,34 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import "~ng-pick-datetime/assets/style/picker.min.css";
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    /* overflow: hidden; */
-    position: relative;
-    font-family: 'Roboto', sans-serif;
+  /* overflow: hidden; */
+  position: relative;
+  font-family: "Roboto", sans-serif;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  margin: 1.25rem 0 1.25rem 0;
+  box-shadow: 0 0.25rem 0.5rem #e6edef;
+
+  .card-head {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #edf1f7;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .card-body {
+    padding: 1rem 1.5rem;
+  }
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* .mat-mdc-tab.mdc-tab {
+    height: 65px !important;
+    width: 45px !important;
+}
+mat-mdc-tab-body-content {
+    height: 100%;
+    overflow: auto;
+    background-color: #fafafa;
+} */
+.mat-mdc-select-value-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #636363;
+  border: 2px solid yellow;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+td.mat-mdc-cell:first-child {
+  border-left: 1px solid #636363;
+}
+
+td.mat-mdc-cell {
+  padding: 16px 0;
+  /* color: white; */
+  border-bottom: 1px solid #636363;
+  border-top: 1px solid #636363;
+}
+th.mat-header-cell {
+  /* position: sticky; */
+  border-bottom-color: #0000001f !important;
+}
+mat-paginator .mat-mdc-select-value-text {
+  color: black;
+}
+/* .mat-mdc-header-row{
+    position: sticky !important;
+} */
+
+thead {
+  position: sticky !important;
+  top: 0px !important;
+}
+.mat-sort-header-arrow {
+  color: white;
+  height: 14px !important;
+  width: 13px !important;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+    
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #ccc;  
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #999;  
+}
+.mat-mdc-form-field-infix{
     display: flex;
-    flex-direction: column;
-    border-radius: .5rem;
-    background-color: #fff;
-    margin: 1.25rem 0 1.25rem 0;
-    box-shadow: 0 .25rem .5rem #e6edef;
-
-    .card-head {
-        padding: 1rem 1.5rem;
-        border-bottom: 1px solid #edf1f7;
-        font-size: 1rem;
-        font-weight: 600;
-    }
-
-    .card-body {
-        padding: 1rem 1.5rem; 
-    }
+    color: #fff;
 }

@@ -1,7 +1,7 @@
 .app-container{
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    /* width: 100vw; */
     /* height: 100vh; */
 }
 .app-header-div{
@@ -43,3 +43,4 @@
     /* align-items: center;
     justify-content: flex-start; */
 }
+

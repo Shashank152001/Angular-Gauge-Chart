@@ -10,14 +10,19 @@ export class DashboardComponent {
   gaugeType:any='arch';
   gaugeValue:any=[];
   gaugeValues:any=[];
+  dummy:any=[]
   gaugeLabel = "Speed";
   gaugeAppendText = "km/hr";
   foregroundColor:any="#2ecc71";
   backgroundColor:any="#ecf0f1"
   result:any
-  resultData:any
+  resultData:any=[]
+  dummyData:any
+  edit:any=false;
 
-  constructor(private apiData:ChartserviceService){}
+  constructor(private apiData:ChartserviceService){
+    
+  }
 
   ngOnInit(){
     this.apiData.getData().subscribe(({
@@ -43,5 +48,36 @@ export class DashboardComponent {
         
       }
      }))
+     this.apiData.getDummyData().subscribe(({
+      next:(res)=>{
+        this.dummyData=res;
+        // console.log(this.dummyData[0].initialValue);
+        
+      }
+     }))
+  }
+
+  funedit(dummy:any){
+    console.log("json data",dummy);
+    // dummy.isEdit=true
+    dummy.isEdit=!dummy.isEdit;
+    this.edit=dummy;
+    console.log(dummy.isEdit);
+    
+    console.log(dummy);
+    
+    console.log(this.edit);
+    // this.close()
+    // this.close()
+    
+    // this.edit.isEdit=true
+    // dummy.isEdit=this.edit.isEdit;
+  }
+  close(){
+    // this.edit=false;
+    this.edit.isEdit=false
+    // this.funedit(this.edit);
+    console.log(this.edit);
+    
   }
 }

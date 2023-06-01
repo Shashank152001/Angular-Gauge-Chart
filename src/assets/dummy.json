@@ -1,0 +1,19 @@
+{
+    "dummy":[
+        {
+            "controlParameter":"COOLER FAN 3 FLOW (M^3/H)",
+            "initialValue":"1100",
+            "recommandedValue":"1240"
+        },
+        {
+            "controlParameter":"COOLER FAN 4 FLOW (M^3/H)",
+            "initialValue":"1400",
+            "recommandedValue":"1440"
+        },
+        {
+            "controlParameter":"COOLER FAN 5 FLOW (M^3/H)",
+            "initialValue":"1400",
+            "recommandedValue":"1440"
+        }
+    ]
+}

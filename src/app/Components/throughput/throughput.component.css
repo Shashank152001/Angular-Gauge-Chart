@@ -1,0 +1,116 @@
+.throughput-main{
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color:#e9ecef;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    box-shadow: 10px 10px 30px #0000001a;
+}
+.throughput-body{
+    padding: 1rem;
+    min-height: 1px;
+    flex: 1 1 auto;
+    /* height: 200px; */
+
+}
+.form-group{
+    margin-bottom: 1rem;
+}
+label{
+    display: inline-block;
+    /* margin-top: 1rem; */
+    padding: 12px;
+    font-size: 15px;
+}
+.custom-file{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    margin-bottom: 0
+}
+.custom-file-label{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    /* height: calc(1.5em + 0.75rem + 2px); */
+    padding: 0.375rem 0.75rem;
+    overflow: hidden;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+input{
+    display: none;
+}
+.custom-file-label:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: block;
+    height: calc(1.5em + 0.75rem);
+    padding: 0.375rem 0.75rem;
+    line-height: 1.5;
+    color: #495057;
+    content: "Browse";
+    background-color: #e9ecef;
+    border-left: inherit;
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+.throughput-span{
+    padding-left: 70%;
+}
+.row{
+    margin: 0px;
+}
+.lower-throughput-div-left{
+    margin: 0px;
+    margin-top: 1%;
+    margin-right: 1%;
+    width: 64%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color:#e9ecef;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    box-shadow: 10px 10px 30px #0000001a;
+}
+.lower-throughput-div-body{
+    min-height: 78px;
+    padding: 1rem;
+}
+.lower-throughput-div-right{
+    margin: 0px;
+    margin-top: 1%;
+    width: 35%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color:#e9ecef;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    box-shadow: 10px 10px 30px #0000001a;
+}
+.throughput-description{
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,39 +1,161 @@
+<div class="bg-dark main-subheader">
+    <div class="subheader-heading">
+        <div class="subheader-heading-left">
+            <h4 class="text-light">Plant of Future</h4>
+        </div>
+        <div class="subheader-heading-right">
+            <p class="text-light me-2" style="font-size: 20px; padding: 5px;">Manager</p>
+            <i class="bi bi-bell text-light me-2" (click)="lgModal.show()" style="font-size: 20px; padding: 5px;"
+                data-bs-target="#staticBackdrop"></i>
+            <div bsModal #lgModal="bs-modal" #staticModal="bs-modal" [config]="{backdrop: 'static'}" class="modal fade"
+                tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 id="dialog-sizes-name1" class="modal-title pull-left">Acknowledge Recommendation
+                                (26-05-2023 05:53 PM)</h4>
+                            <button type="button" class="btn btn-danger text-light" (click)="lgModal.hide()"
+                                (click)="close()" aria-label="Close">
+                                <!-- <span aria-hidden="true" class="visually-hidden">&times;</span> -->
+                                Close
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Control Parameter</th>
+                                        <th>Initial Value</th>
+                                        <th>Recommended Value</th>
+                                        <th>Remarks</th>
+                                        <th>Acknowledge</th>
+                                        <th>Action Taken</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let dummy of dummyData; let srno=index">
+                                        <td>{{dummy.controlParameter}}</td>
+                                        <td>{{dummy.initialValue}}</td>
+                                        <td>{{dummy.recommandedValue}}</td>
+                                        <td>
+                                            <div *ngIf="!dummy.isEdit">
+                                                <i class="bi bi-pencil-fill" (click)="funedit(dummy)"></i>
+                                            </div>
+                                            <div *ngIf="dummy.isEdit">
+                                                <textarea name="" id="" cols="30" rows="4"></textarea>
+                                            </div>
+
+                                        </td>
+                                        <td><input type="checkbox" name="" id=""></td>
+                                        <td>
+                                            <div class="parent-radio" *ngIf="dummy.isEdit">
+                                                <div class="yes-radio me-2">
+                                                    <input type="radio" name="" id="">
+                                                    Yes
+                                                </div>
+                                                <div class="no-radio">
+                                                    <input type="radio" name="" id=""> No
+                                                </div>
+                                                <div class="button">
+                                                    <button class="btn btn-outline-primary ms-1">Submit</button>
+                                                </div>
+                                            </div>
+                                            <div class="parent-radio" *ngIf="!dummy.isEdit">
+                                                <div class="yes-radio me-2">
+                                                    <input type="radio" name="radioButton" id="">
+                                                    Yes
+                                                </div>
+                                                <div class="no-radio">
+                                                    <input type="radio" name="radioButton" id=""> No
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <td>COOLER FAN 3 FLOW (M^3/H)</td>
+                                        <td>1100</td>
+                                        <td>1240</td>
+                                        <td>
+                                            <div *ngIf="!edit">
+                                                <i class="bi bi-pencil-fill" (click)="funedit()"></i>
+                                            </div>
+                                            <div *ngIf="edit">
+                                                <textarea name="" id="" cols="30" rows="4"></textarea>
+                                                <button type="submit" class="btn btn-outline-success me-2">Save</button>
+                                                <button type="reset" class="btn btn-outline-danger">Cancel</button>
+                                            </div>
+                                            
+                                        </td>
+                                        <td><input type="checkbox" name="" id=""></td>
+                                        <td>
+                                            <div class="parent-radio" *ngIf="edit">
+                                                <div class="yes-radio me-2">
+                                                    <input type="radio" name="" id="">
+                                                     Yes
+                                                </div>
+                                                <div class="no-radio">
+                                                    <input type="radio" name="" id=""> No
+                                                </div>
+                                                <div class="button">
+                                                    <button class="btn btn-outline-primary ms-1">Submit</button>
+                                                </div>
+                                            </div>
+                                            <div class="parent-radio" *ngIf="!edit">
+                                                <div class="yes-radio me-2">
+                                                    <input type="radio" name="" id="">
+                                                     Yes
+                                                </div>
+                                                <div class="no-radio">
+                                                    <input type="radio" name="" id=""> No
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="main-dashboard">
     <div class="dashboard-left">
         <div class="dashboard-left-heading">
             <h4 class="text-warning">RESULTANT PARAMETER</h4>
         </div>
-        
+
         <div class="dashboard-col">
             <div *ngFor="let data of gaugeValue" class="dashboard-card">
-                <h5 class="text-light">{{data.title}}</h5>
-                <ngx-gauge [type]="gaugeType" 
-                [value]=data.value
-                [size]="100"
-                [foregroundColor]="foregroundColor"
-                [backgroundColor]="backgroundColor"
-                [label]="gaugeLabel"  
-                [append]="gaugeAppendText">
-              </ngx-gauge>
+                <div class="title-heading-left">
+                    <h5 class="text-light text-center">{{data.title}}</h5>
+                </div>
+                <div class="gauge-chart">
+                    <ngx-gauge [type]="gaugeType" [value]=data.value [size]="100" [foregroundColor]="foregroundColor"
+                        [backgroundColor]="backgroundColor" [label]="gaugeLabel" [append]="gaugeAppendText">
+                    </ngx-gauge>
+                </div>
+
             </div>
         </div>
-        
+
     </div>
     <div class="dashboard-right">
         <div class="dashboard-right-heading">
             <h4 class="text-warning">CONTROL PARAMETERS</h4>
         </div>
         <div class="dashboard-col">
-            <div *ngFor="let data of gaugeValues" class="dashboard-card">
-                <h5 class="text-light">{{data.title}}</h5>
-                <ngx-gauge [type]="gaugeType" 
-                [value]=data.value
-                [size]="90"
-                [foregroundColor]="foregroundColor"
-                [backgroundColor]="backgroundColor"
-                [label]="gaugeLabel"  
-                [append]="gaugeAppendText">
-              </ngx-gauge>
+            <div *ngFor="let data of gaugeValues" class="dashboard-card-right">
+                <div class="title-heading-right">
+                    <h5 class="text-light text-center">{{data.title}}</h5>
+                </div>
+                <div class="gauge-chart">
+                    <ngx-gauge [type]="gaugeType" [value]=data.value [size]="90" [foregroundColor]="foregroundColor"
+                        [backgroundColor]="backgroundColor" [label]="gaugeLabel" [append]="gaugeAppendText">
+                    </ngx-gauge>
+                </div>
+
             </div>
         </div>
     </div>
